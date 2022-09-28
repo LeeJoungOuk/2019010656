@@ -1,0 +1,4 @@
+﻿  4nd pp151 .cpp
+C:\Users\user\Documents\GitHub\leejeongouk\4md Project\4nd pp151 .cpp(16,15): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\user\Documents\GitHub\leejeongouk\4md Project\4nd pp151 .cpp(31,15): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+  4md Project.vcxproj -> C:\Users\user\Documents\GitHub\leejeongouk\4md Project\x64\Debug\4md Project.exe
