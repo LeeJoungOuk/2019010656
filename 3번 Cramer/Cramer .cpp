@@ -31,6 +31,7 @@ int main(void)
 			{
 				printf("C : ");
 			}
+			
 			scanf_s("%d", &Arr[i][j]);
 		}
 		printf("D : ");
@@ -38,7 +39,7 @@ int main(void)
 	}
 	for (i = 0; i < m; i++)
 	{
-		printf("\n%d equation %dx + %dy + %dz = %d\n\n", i + 1, Arr[i][0], Arr[i][1], Arr[i][2], Cns[i]);     // 세 방정식 확인
+		printf("\n\t%d equation %dx + %dy + %dz = %d\n\n", i + 1, Arr[i][0], Arr[i][1], Arr[i][2], Cns[i]);     // 세 방정식 확인
 	}
 
 	Det(Arr, m, Str_1, det);         
@@ -101,10 +102,12 @@ void Cramer(int(* p_a)[m], int size, int*p_c, double*p_s, double det)
 	}
 	if (det == 0)
 	{
-		printf("Retry input equation\n");                                                // cramer 공식 사용 조건
+		printf("\n\tRetry input equation\n");                                                // cramer 공식 사용 조건
 	}
-	else
+	else if(det > 0 && det < 0)
 	{
-		printf("x : %lf\t  y : %lf\t  z : %lf", p_s[0]/det, p_s[1] / det, p_s[2] / det);           
+		printf("\tThree equation calculation\n");
+		printf("\nx : %lf\t  y : %lf\t  z : %lf\n", p_s[0]/det, p_s[1] / det, p_s[2] / det);           
 	}
+
 }
