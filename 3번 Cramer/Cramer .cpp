@@ -104,7 +104,7 @@ void Cramer(int(* p_a)[m], int size, int*p_c, double*p_s, double det)
 	{
 		printf("\n\tRetry input equation\n");                                                // cramer 공식 사용 조건
 	}
-	else if(det > 0 && det < 0)
+	else
 	{
 		printf("\tThree equation calculation\n");
 		printf("\nx : %lf\t  y : %lf\t  z : %lf\n", p_s[0]/det, p_s[1] / det, p_s[2] / det);           
