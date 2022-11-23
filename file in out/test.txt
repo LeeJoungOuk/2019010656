@@ -1,5 +1,4 @@
-Name : QWE
- Age : 23
- Weight : 77.500000
- Personality : I
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+Name : Lee Jeong Ouk
+Age : 23
+Weight : 77.60
+MBTI : I

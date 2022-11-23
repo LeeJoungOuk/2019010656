@@ -1,69 +1,65 @@
 #include <stdio.h>
 #include<string.h>
-#define NAME 40
-#define MAX 500
+
 #define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable : 6031)
 #pragma warning(disable : 4996)
 
-typedef struct Information
-{
-	char name[NAME];
-	int age;
-	double weight;
-	char per;	
-}Information;
+#define NAME 40
+#define MAX 200
+
 
 int main(void)
 {
-	Information data;
-	char str[MAX];
+	int age = 0;                 //정수
+	double weight = 0;			//실수
+	char per = 0;				//문자
+	char name[NAME] = { 0 };	//문자열
+	char str[MAX] = { 0 };		//출력을 위한 배열
 
-	printf("Name : ");
-	scanf("%s", &data.name);
+	printf("Name : ");        
+	gets_s(name, NAME);
 
 	printf("Age : ");
-	scanf(" %d", &data.age);
+	scanf("%d", &age);
 
 	printf("Weight : ");
-	scanf(" %lf", &data.weight);
+	getchar();                 //개행문자 제거
+	scanf("%lf", &weight);
 
-	printf("Personality : ");
-	scanf(" %c", &data.per);
+	printf("MBTI : ");
+	getchar();
+	scanf("%c", &per);
 
 
 	FILE* fp = NULL;
 
-	fp = fopen("test.txt", "w");
+	fp = fopen("C:\\Users\\user\\Documents\\GitHub\\leejeongouk\\file in out\\test.txt", "w");    //쓰기형으로 파일 열기
 
 	if (fp == NULL)
 	{
-		printf("Can't open file");
+		printf("Can't open file");     //file = 0일때 파일 오픈 실패.
 		return 1;
 	}
-	fprintf(fp, "Name : %s\n Age : %d\n Weight : %f\n Personality : %c\n", data.name, data.age, data.weight, data.per);
 	
-	fclose(fp);
+	fprintf(fp, "Name : %s\nAge : %d\nWeight : %.2lf\nMBTI : %c\n", name, age, weight, per);   //파일에 입력한 정보 프린트
 	
-	FILE* fp;
-	
-	fp = fopen("C:\\Users\\user\\Documents\\GitHub\\leejeongouk\\file in out\\test", "r");
+	fclose(fp);    //닫기
 
-	if (fp == NULL)
+	fp = fopen("C:\\Users\\user\\Documents\\GitHub\\leejeongouk\\file in out\\test.txt", "r");    //r(읽기)형으로 파일 열기
+
+	printf("\nFile Loading..\n"); 
+
+	while (fgets(str, MAX, fp) != NULL)     // 파일 일기 중 개행문자 제거
 	{
-		printf("Can't open file");
-		return 1;
+		if (str[MAX - 1] == '\n')
+		{
+			str[MAX - 1] = '\0';
+		}
+		printf("%s", str);
 	}
-
-	char buffer[MAX] = { 0, };
-
-	fread(buffer, 1, MAX, fp);
-	printf("%s", buffer);
 
 	fclose(fp);
 
 	return 0;
 }
-
-
-
-

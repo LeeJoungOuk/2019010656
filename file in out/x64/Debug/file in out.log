@@ -1,3 +1,2 @@
 ﻿  file.cpp
-C:\Users\user\Documents\GitHub\leejeongouk\file in out\file.cpp(47,8): error C2086: 'FILE *fp': 재정의
-C:\Users\user\Documents\GitHub\leejeongouk\file in out\file.cpp(34): message : 'fp' 선언을 참조하십시오.
+  file in out.vcxproj -> C:\Users\user\Documents\GitHub\leejeongouk\file in out\x64\Debug\file in out.exe
