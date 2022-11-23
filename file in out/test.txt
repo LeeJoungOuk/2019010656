@@ -1,0 +1,5 @@
+Name : QWE
+ Age : 23
+ Weight : 77.500000
+ Personality : I
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
